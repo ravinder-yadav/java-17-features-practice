@@ -27,14 +27,22 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
+def incubatorArgs = ['--add-modules', 'jdk.incubator.foreign']
+
 tasks.withType(JavaCompile).configureEach {
 	options.compilerArgs += ['--enable-preview']
+	options.compilerArgs += incubatorArgs
 }
 
 tasks.withType(Test).configureEach {
 	jvmArgs += ['--enable-preview']
+	jvmArgs += incubatorArgs
+	jvmArgs += '--enable-native-access=ALL-UNNAMED'
+
 }
 
 tasks.withType(JavaExec).configureEach {
 	jvmArgs += ['--enable-preview']
+	jvmArgs += incubatorArgs
+	jvmArgs += '--enable-native-access=ALL-UNNAMED'
 }
