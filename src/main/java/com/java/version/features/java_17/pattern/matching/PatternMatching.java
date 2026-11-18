@@ -3,11 +3,7 @@ package com.java.version.features.java_17.pattern.matching;
 public class PatternMatching {
 
     public static void main(String[] args) {
-        Object object = 10;
-
-        /**
-         * Before pattern matching
-         */
+        Object object = null;
         if (object instanceof String) {
             String s = (String) object;
             System.out.println(s.toUpperCase());
@@ -47,7 +43,7 @@ public class PatternMatching {
 
         switch (object) {
             //case String s -> System.out.println(s.toUpperCase());
-            case String s && s.length() > 5 -> System.out.println(s.toUpperCase());
+            case String s && s.length() >= 5 -> System.out.println(s.toUpperCase());
             //case Integer i -> System.out.println(i*2);
             case Integer i && i >= 10 -> System.out.println(i*2);
             case null -> System.out.println("object is null");
