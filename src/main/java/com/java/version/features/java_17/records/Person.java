@@ -96,7 +96,7 @@ public record Person(String name, int age) {
      * but mandatory to delegate the field initialization and validations through Canonical constructor
      */
     public Person() {
-        System.out.println("Default zero argument constructor");
+        //System.out.println("Default zero argument constructor");
 
         this("Default Name", 0);
     }
@@ -105,7 +105,7 @@ public record Person(String name, int age) {
      * Non-Canonical (Overloaded) Constructors. These are custom constructors with different parameter lists. They allow you to provide default values or accept alternative input types.
      */
     public Person(String name) {
-        System.out.println("Default zero argument constructor");
+        //System.out.println("Default zero argument constructor");
         this(name, 0);
     }
 
