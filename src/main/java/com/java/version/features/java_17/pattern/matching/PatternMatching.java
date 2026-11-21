@@ -3,7 +3,7 @@ package com.java.version.features.java_17.pattern.matching;
 public class PatternMatching {
 
     public static void main(String[] args) {
-        Object object = null;
+        Object object = new LocationRecord(1,2);
         if (object instanceof String) {
             String s = (String) object;
             System.out.println(s.toUpperCase());
@@ -42,6 +42,7 @@ public class PatternMatching {
 
 
         switch (object) {
+            case LocationRecord l && l.x() >0 && l.y() >0 -> System.out.println("x = "+ l.x()+ " y = " + l.y());
             //case String s -> System.out.println(s.toUpperCase());
             case String s && s.length() >= 5 -> System.out.println(s.toUpperCase());
             //case Integer i -> System.out.println(i*2);
